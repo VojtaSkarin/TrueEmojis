@@ -1,9 +1,9 @@
 {
   "manifest_version": 3, 
   "name": "TrueEmojis",
-  "version": "0.0.0.1",
+  "version": "0.0.0.2",
   
-  "description": "Ta správná emoji pro diskuzní fórum.",
+  "description": "Nahrazuje smajlíky z diskuzního fóra vlastními a umožňuje uživateli vzhled smajlíků měnit.",
   
   "author": "KrásnýDen",
  
