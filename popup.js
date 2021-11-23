@@ -1,28 +1,15 @@
 setButton = document.getElementById('setButton');
-rollbackButton = document.getElementById('rollbackButton');
-
 setButton.onclick = saveConfiguration;
+
+rollbackButton = document.getElementById('rollbackButton');
 rollbackButton.onclick = restoreConfiguration;
 
 async function saveConfiguration() {
 	// Save changes
-	mimo = document.getElementById("mimo").value;
-	otravne = document.getElementById("otravne").value;
-	prinosne = document.getElementById("prinosne").value;
-	vtipne = document.getElementById("vtipne").value;
-	zajimave = document.getElementById("zajimave").value;
-	nemamNazor = document.getElementById("nemamNazor").value;
-
-	keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor'];
-	values = [mimo, otravne, prinosne, vtipne, zajimave, nemamNazor];
-	
-	data = {};
-	
-	for (i = 0; i < keys.length; i++) {
-		if (values[i].length > 0) {
-			data[keys[i]] = values[i];
-		}
-	}
+	data = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor']
+		.map(key => [key, document.getElementById(key).value])
+		.filter(([_, value]) => value.length > 0)
+		.reduce((prev, [key, value]) => ({...prev, [key]: value}), {});
 	
 	chrome.storage.sync.set(data, () => {});
 	
@@ -57,13 +44,11 @@ async function restoreConfiguration() {
 			root = document.querySelector(':root');
 			style = getComputedStyle(root);
 			
-			keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor'];
-			
-			for (i = 0; i < keys.length; i++) {
-				key = keys[i];
+			['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor']
+			.forEach(key => {
 				defaultValue = style.getPropertyValue('--' + key + 'UrlDefault');
 				root.style.setProperty('--' + key + 'Url', defaultValue);
-			}
+			});
 		}
 	});
 }
