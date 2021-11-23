@@ -1,15 +1,15 @@
 :root {
 	--mimoUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/KingPepega.png');
-	--otravneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/CringeHarold.png');
-	--prinosneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/200IQ.png');
+	--otravneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/Tarded.png');
+	--prinosneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/WeSmart.png');
 	--vtipneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/Kekw.png');
 	--zajimaveUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/PagChomp.png');
 	--nemamNazorUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/PeepoShrug.png');
 	
 	
 	--mimoUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/KingPepega.png');
-	--otravneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/CringeHarold.png');
-	--prinosneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/200IQ.png');
+	--otravneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/Tarded.png');
+	--prinosneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/WeSmart.png');
 	--vtipneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/Kekw.png');
 	--zajimaveUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/PagChomp.png');
 	--nemamNazorUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/PeepoShrug.png');
