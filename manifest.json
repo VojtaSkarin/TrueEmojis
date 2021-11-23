@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3, 
+  "name": "TrueEmojis",
+  "version": "0.0.0.1",
+  
+  "description": "Ta správná emoji pro diskuzní fórum.",
+  
+  "author": "KrásnýDen",
+ 
+  "content_scripts": [{
+    "css": ["emojis.css"],
+    "js": ["content.js"],
+    "matches": ["https://is.muni.cz/*"]
+  }],
+  
+  "action": {
+    "default_popup": "popup.html"
+  },
+  
+  "web_accessible_resources": [{
+    "resources": ["/emojis/*", "script.js"],
+    "matches": ["<all_urls>"]
+  }],
+  
+  "permissions": [
+    "storage",
+	"activeTab",
+	"scripting"
+  ],
+  
+  "icons": {
+    "48": "/icons/gigachad48.png",
+    "128": "/icons/gigachad128.png"
+  }
+}

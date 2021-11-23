@@ -1,0 +1,49 @@
+:root {
+	--mimoUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/KingPepega.png');
+	--otravneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/CringeHarold.png');
+	--prinosneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/200IQ.png');
+	--vtipneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/Kekw.png');
+	--zajimaveUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/PagChomp.png');
+	
+	
+	--mimoUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/KingPepega.png');
+	--otravneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/CringeHarold.png');
+	--prinosneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/200IQ.png');
+	--vtipneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/Kekw.png');
+	--zajimaveUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/PagChomp.png');
+}
+
+.isi-face-mimo-tema:before {
+  content: "\1" !important;
+  background-image: var(--mimoUrl);
+  background-repeat: no-repeat;
+  background-size: 2.0rem;
+}
+
+.isi-face-otravne:before {
+  content: "\2" !important;
+  background-image: var(--otravneUrl);
+  background-repeat: no-repeat;
+  background-size: 2.0rem;
+}
+
+.isi-face-prinosne:before {
+  content: "\3" !important;
+  background-image: var(--prinosneUrl);
+  background-repeat: no-repeat;
+  background-size: 2.0rem;
+}
+
+.isi-face-vtipne:before {
+  content: "\4" !important;
+  background-image: var(--vtipneUrl);
+  background-repeat: no-repeat;
+  background-size: 2.0rem;
+}
+
+.isi-face-zajimave:before {
+  content: "\5" !important;
+  background-image: var(--zajimaveUrl);
+  background-repeat: no-repeat;
+  background-size: 2.0rem;
+}
