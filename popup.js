@@ -11,13 +11,14 @@ async function saveConfiguration() {
 	prinosne = document.getElementById("prinosne").value;
 	vtipne = document.getElementById("vtipne").value;
 	zajimave = document.getElementById("zajimave").value;
+	nemamNazor = document.getElementById("nemamNazor").value;
 
-	keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave'];
-	values = [mimo, otravne, prinosne, vtipne, zajimave];
+	keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor'];
+	values = [mimo, otravne, prinosne, vtipne, zajimave, nemamNazor];
 	
 	data = {};
 	
-	for (i = 0; i < 5; i++) {
+	for (i = 0; i < keys.length; i++) {
 		if (values[i].length > 0) {
 			data[keys[i]] = values[i];
 		}
@@ -31,7 +32,7 @@ async function saveConfiguration() {
 	chrome.scripting.executeScript({
 		target: { tabId: tab.id },
 		function: () => {
-			keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave'];
+			keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor'];
 	
 			chrome.storage.sync.get(keys, items => {
 				root = document.querySelector(':root');
@@ -56,9 +57,9 @@ async function restoreConfiguration() {
 			root = document.querySelector(':root');
 			style = getComputedStyle(root);
 			
-			keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave'];
+			keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor'];
 			
-			for (i = 0; i < 5; i++) {
+			for (i = 0; i < keys.length; i++) {
 				key = keys[i];
 				defaultValue = style.getPropertyValue('--' + key + 'UrlDefault');
 				root.style.setProperty('--' + key + 'Url', defaultValue);

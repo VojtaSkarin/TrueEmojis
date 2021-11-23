@@ -1,4 +1,4 @@
-keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave'];
+keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor'];
 
 chrome.storage.sync.get(keys, items => {
 	root = document.querySelector(':root');

@@ -4,6 +4,7 @@
 	--prinosneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/200IQ.png');
 	--vtipneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/Kekw.png');
 	--zajimaveUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/PagChomp.png');
+	--nemamNazorUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/PeepoShrug.png');
 	
 	
 	--mimoUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/KingPepega.png');
@@ -11,6 +12,7 @@
 	--prinosneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/200IQ.png');
 	--vtipneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/Kekw.png');
 	--zajimaveUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/PagChomp.png');
+	--nemamNazorUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/PeepoShrug.png');
 }
 
 .isi-face-mimo-tema:before {
@@ -44,6 +46,13 @@
 .isi-face-zajimave:before {
   content: "\5" !important;
   background-image: var(--zajimaveUrl);
+  background-repeat: no-repeat;
+  background-size: 2.0rem;
+}
+
+.isi-face-nemam-nazor:before {
+  content: "\6" !important;
+  background-image: var(--nemamNazorUrl);
   background-repeat: no-repeat;
   background-size: 2.0rem;
 }
