@@ -4,7 +4,7 @@ setButton.onclick = saveConfiguration;
 rollbackButton = document.getElementById('rollbackButton');
 rollbackButton.onclick = restoreConfiguration;
 
-async function saveConfiguration() {
+function saveConfiguration() {
 	// Save changes
 	data = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor']
 		.map(key => [key, document.getElementById(key).value])
@@ -14,41 +14,43 @@ async function saveConfiguration() {
 	chrome.storage.sync.set(data, () => {});
 	
 	// Apply changes	
-	[tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-	
-	chrome.scripting.executeScript({
-		target: { tabId: tab.id },
-		function: () => {
-			keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor'];
-	
-			chrome.storage.sync.get(keys, items => {
-				root = document.querySelector(':root');
-				style = getComputedStyle(root);
-				
-				for ([key, value] of Object.entries(items)) {
-					root.style.setProperty('--' + key + 'Url', 'url("' + value + '")');
-				}
-			});
-		}
+	chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+		chrome.tabs.executeScript(
+			tabs[0].id,
+			{
+				code: "\
+					keys = ['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor'];\
+					\
+					chrome.storage.sync.get(keys, items => {\
+						root = document.querySelector(':root');\
+						\
+						for ([key, value] of Object.entries(items)) {\
+							root.style.setProperty('--' + key + 'Url', 'url(\"' + value + '\")');\
+						}\
+					});\
+					"
+			}
+		);
 	});
 }
 
-async function restoreConfiguration() {
+function restoreConfiguration() {
 	chrome.storage.sync.clear();
 	
-	[tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-	
-	chrome.scripting.executeScript({
-		target: { tabId: tab.id },
-		function: () => {
-			root = document.querySelector(':root');
-			style = getComputedStyle(root);
-			
-			['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor']
-			.forEach(key => {
-				defaultValue = style.getPropertyValue('--' + key + 'UrlDefault');
-				root.style.setProperty('--' + key + 'Url', defaultValue);
-			});
-		}
+	chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+		chrome.tabs.executeScript(
+			tabs[0].id,
+			{
+				code: "\
+					root = document.querySelector(':root');\
+					style = getComputedStyle(root);\
+					['mimo', 'otravne', 'prinosne', 'vtipne', 'zajimave', 'nemamNazor']\
+						.forEach(key => {\
+							defaultValue = style.getPropertyValue('--' + key + 'UrlDefault');\
+							root.style.setProperty('--' + key + 'Url', defaultValue);\
+						});\
+					"
+			}
+		);
 	});
 }

@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3, 
+  "manifest_version": 2, 
   "name": "TrueEmojis",
   "version": "0.0.0.2",
   
@@ -13,23 +13,25 @@
     "matches": ["https://is.muni.cz/*"]
   }],
   
-  "action": {
-    "default_popup": "popup.html"
+  "browser_action": {
+    "default_popup": "popup.html",
+	"default_icon": {
+	  "48": "/icons/gigachad48.png",
+	  "128": "/icons/gigachad128.png"
+	}
   },
   
-  "web_accessible_resources": [{
-    "resources": ["/emojis/*", "script.js"],
-    "matches": ["<all_urls>"]
-  }],
+  "web_accessible_resources": [
+    "/emojis/*", "script.js"
+  ],
   
   "permissions": [
     "storage",
-	"activeTab",
-	"scripting"
+	"activeTab"
   ],
   
   "icons": {
-    "48": "/icons/gigachad48.png",
-    "128": "/icons/gigachad128.png"
-  }
+	  "48": "/icons/gigachad48.png",
+	  "128": "/icons/gigachad128.png"
+	}
 }
