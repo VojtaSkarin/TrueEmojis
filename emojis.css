@@ -1,58 +1,37 @@
-:root {
-	--mimoUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/KingPepega.png');
-	--otravneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/Tarded.png');
-	--prinosneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/WeSmart.png');
-	--vtipneUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/Kekw.png');
-	--zajimaveUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/PagChomp.png');
-	--nemamNazorUrl: url('chrome-extension://__MSG_@@extension_id__/emojis/PeepoShrug.png');
-	
-	
-	--mimoUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/KingPepega.png');
-	--otravneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/Tarded.png');
-	--prinosneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/WeSmart.png');
-	--vtipneUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/Kekw.png');
-	--zajimaveUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/PagChomp.png');
-	--nemamNazorUrlDefault: url('chrome-extension://__MSG_@@extension_id__/emojis/PeepoShrug.png');
-}
-
 .isi-face-mimo-tema:before {
-  content: "\1" !important;
   background-image: var(--mimoUrl);
-  background-repeat: no-repeat;
-  background-size: 2.0rem;
 }
 
 .isi-face-otravne:before {
-  content: "\2" !important;
   background-image: var(--otravneUrl);
-  background-repeat: no-repeat;
-  background-size: 2.0rem;
 }
 
 .isi-face-prinosne:before {
-  content: "\3" !important;
   background-image: var(--prinosneUrl);
-  background-repeat: no-repeat;
-  background-size: 2.0rem;
 }
 
 .isi-face-vtipne:before {
-  content: "\4" !important;
   background-image: var(--vtipneUrl);
-  background-repeat: no-repeat;
-  background-size: 2.0rem;
 }
 
 .isi-face-zajimave:before {
-  content: "\5" !important;
   background-image: var(--zajimaveUrl);
-  background-repeat: no-repeat;
-  background-size: 2.0rem;
 }
 
 .isi-face-nemam-nazor:before {
-  content: "\6" !important;
   background-image: var(--nemamNazorUrl);
+}
+
+.isi-face-mimo-tema:before,
+.isi-face-otravne:before,
+.isi-face-prinosne:before,
+.isi-face-vtipne:before,
+.isi-face-zajimave:before,
+.isi-face-nemam-nazor:before
+{
+  content: "" !important;
   background-repeat: no-repeat;
   background-size: 2.0rem;
+  width: 2.0rem;
+  height: 2.0rem;
 }

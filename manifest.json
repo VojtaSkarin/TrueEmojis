@@ -1,6 +1,6 @@
 {
   "manifest_version": 2, 
-  "name": "TrueEmojis",
+  "name": "TrueEmojisFirefox",
   "version": "0.0.0.2",
   
   "description": "Nahrazuje smajlíky z diskuzního fóra vlastními a umožňuje uživateli vzhled smajlíků měnit.",
@@ -14,6 +14,7 @@
   }],
   
   "browser_action": {
+	"default_title": "TrueEmojisFirefox",
     "default_popup": "popup.html",
 	"default_icon": {
 	  "48": "/icons/gigachad48.png",
@@ -22,7 +23,8 @@
   },
   
   "web_accessible_resources": [
-    "/emojis/*", "script.js"
+    "/emojis/*",
+	"script.js"
   ],
   
   "permissions": [
@@ -31,7 +33,14 @@
   ],
   
   "icons": {
-	  "48": "/icons/gigachad48.png",
-	  "128": "/icons/gigachad128.png"
-	}
+    "48": "/icons/gigachad48.png",
+    "64": "/icons/gigachad64.png",
+    "128": "/icons/gigachad128.png"
+  },
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "borderify@example.com"
+    }
+  }
 }
